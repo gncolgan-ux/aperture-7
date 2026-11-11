@@ -1,0 +1,13 @@
+Def(PLANT_TUMBLERS : Shift(0)Loop(6 : Elevate(+1)Rotate(-1)Resonate(@IDX * PI / 3)Set(@Z * @Z * 50)))
+Def(CRACK_TUMBLERS : Elevate(-6)Loop(6 : Elevate(+1)Shift(6 - @Z)Resonate(@IDX * PI / 3)Calc()Origin(0)Diffuse(1)))
+Def(OPEN_VAULT : Origin(0)Collapse(+)Loop(6 : Rotate(+1)Collapse(+))Origin(0))
+
+Call(PLANT_TUMBLERS)
+Echo(DORMANT_FORMULA_AT_Z6_E0:@E0)
+Call(CRACK_TUMBLERS)
+Call(OPEN_VAULT)
+Echo(VAULT_CRACKED_MASTER_KEY:@C0)
+Save(vault_cracked.bin)
+Shift(3)Resonate(4 * PI / 3)
+Write(citadel_core.hx : Elevate(6)Origin(0)Calc(@C0 * 10 + @E0)Echo(CITADEL_ROOF_BEACON:@REG))
+Origin(0)Run(citadel_core.hx)

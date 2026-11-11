@@ -1,0 +1,23 @@
+Def(OPEN : Loop(6 : Rotate(+1)Switch(@IDX - 1))Origin(0))
+Def(P : Elevate(-1)Calc()Elevate(+1)Calc(@REG))
+Def(PULL : Origin(0)Call(P)Loop(6 : Rotate(+1)Switch(@IDX - 1)Call(P))Origin(0))
+Def(LENS : Loop(6 : Rotate(+1)Switch(@IDX - 1)Calc()Calc(@C0 - @REG)Calc(@REG * 2))Origin(0)Calc(0))
+Def(DIODE : Loop(6 : Rotate(+1)Switch(@IDX - 1)Calc()IfL(0 : Calc(0)))Origin(0))
+Def(LOCK : Loop(6 : Rotate(+1)Switch(@IDX - 1)Calc()IfL(500 : Calc(0)))Origin(0))
+Def(U : Elevate(-1)Calc()Elevate(+1)Calc(@REG * 0.2 + @SELF))
+Def(LEARN : Loop(6 : Rotate(+1)Switch(@IDX - 1)Call(U))Origin(0))
+Def(CARVE_STEP : Elevate(5)Calc()Elevate(0)Calc(@SELF - @REG))
+Def(FEEDBACK : Origin(0)Loop(6 : Rotate(+1)Switch(@IDX - 1)Call(CARVE_STEP))Origin(0)Diffuse(1))
+
+Def(CYCLE : Elevate(1)Call(PULL)Call(LENS)Elevate(2)Call(PULL)Elevate(3)Call(PULL)Call(DIODE)Elevate(4)Call(PULL)Call(LOCK)Elevate(5)Call(LEARN)Call(FEEDBACK))
+
+Elevate(0)Elevate(-6)Call(OPEN)
+Origin(0)Calc(40000)
+Switch(0)Calc(90000)Switch(1)Calc(10000)
+Switch(2)Calc(60000)Switch(3)Calc(10000)
+Switch(4)Calc(75000)Switch(5)Calc(10000)
+Loop(6 : Elevate(+1)Call(PULL)Origin(0)Diffuse(1))
+
+Elevate(5)Call(OPEN)Origin(0)Calc(0)Loop(6 : Rotate(+1)Switch(@IDX - 1)Calc(0))
+Loop(10 : Call(CYCLE))
+Save(latest.bin)

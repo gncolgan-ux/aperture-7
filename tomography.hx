@@ -1,0 +1,7 @@
+Def(OPEN : Loop(6 : Rotate(+1)Switch(@IDX - 1)))
+Def(PLANT : Elevate(0)Elevate(-6)Call(OPEN)Origin(0)Calc(15000)Switch(1)Calc(50000)Switch(4)Calc(25000))
+Def(PULL : Elevate(-1)Calc()Elevate(+1)Calc(@REG))
+Def(STEP : Elevate(+1)Origin(0)Call(PULL)Loop(6 : Rotate(+1)Switch(@IDX - 1)Call(PULL))Origin(0)Diffuse(1))
+Call(PLANT)
+Loop(6 : Call(STEP)Echo(WAVE_Z@Z:C0=@C0|E1=@E1|E4=@E4))
+Save(tomography_solved.bin)

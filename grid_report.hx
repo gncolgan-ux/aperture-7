@@ -1,0 +1,1 @@
+CenterEquilibrium=35

@@ -1,0 +1,1 @@
+Loop(20:Elevate(+1)Origin(0)Math(0 * 0 * 10)Loop(6:Rotate(+1)Resonate(4 * 3.141593 / 3)Math(0 + 4 * 5))Origin(0)Diffuse(1))Origin(0)Collapse(+)Loop(6:Rotate(+1)Collapse(+))Origin(0)Echo(SKYSCRAPER_20_FLOORS_C0:0)
