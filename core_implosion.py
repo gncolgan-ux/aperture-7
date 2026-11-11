@@ -1,0 +1,2 @@
+nodes=['282455', '248143', '198948', '194947', '218370', '202949']
+import math; v=[float(x) for x in nodes]; G=6.6743e-11; m_sun=1.989e30; core_mass=1.44*m_sun; r_init=6000000; r_final=10000; vol=(4/3)*math.pi*r_init**3; rho=core_mass/vol; t_collapse=math.sqrt((3*math.pi)/(32*G*rho)); e_release=(3/5)*G*(core_mass**2)*(1/r_final - 1/r_init); print(f"Stellar Death: Core_Collapse_Time={t_collapse*1000:.2f}ms | Final_Radius={r_final/1000:.0f}km | Neutrino_Burst={e_release:.2e}J")

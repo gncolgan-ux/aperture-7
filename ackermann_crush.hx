@@ -1,0 +1,5 @@
+Origin(0)
+Shift(20)
+Imprint(import sys; sys.setrecursionlimit(100000); exec("def A(m, n):\n if m==0: return n+1\n if m>0 and n==0: return A(m-1, 1)\n return A(m-1, A(m, n-1))"); res=A(4, 1); print(f"Ackermann Limit: A(4, 1) = {res}"))
+Exec(recursive_collapse.py)
+Echo(Stack Overloaded -> $REG)

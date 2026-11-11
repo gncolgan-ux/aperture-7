@@ -1,0 +1,2 @@
+nodes=['218370', '202949', '282455', '248143', '198948', '194947']
+v=[float(x) for x in nodes]; cx=-0.743643887037151 + (v[0]%1000)*1e-13; cy=0.131825904205330 + (v[1]%1000)*1e-13; zx,zy=0.0,0.0; max_i=5000000; exec("for i in range(max_i):\n tx=zx*zx-zy*zy+cx\n ty=2.0*zx*zy+cy\n zx,zy=tx,ty\n if zx*zx+zy*zy>4.0: break"); print(f"Mandelbrot Edge: Coord({cx:.15f}, {cy:.15f}) | Escape_Iteration={i}")

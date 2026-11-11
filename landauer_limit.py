@@ -1,0 +1,2 @@
+nodes=['194947', '218370', '202949', '282455', '248143', '198948']
+import math; v=[float(x) for x in nodes]; bit_length=int((v[3]%128)+128); keys=2**bit_length; k_B=1.380649e-23; T=2.73; bit_energy=k_B*T*math.log(2); total_energy=keys*bit_energy; c=299792458.0; mass_eq=total_energy/(c**2); print(f"Thermodynamic Crypto: Bits={bit_length} | Total_Keys={keys:.1e} | Min_Energy={total_energy:.2e}J | Mass_Eq={mass_eq:.2e}kg")

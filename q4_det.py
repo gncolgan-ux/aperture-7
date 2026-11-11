@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math, cmath; v=[int(x) for x in nodes]; eigs=[sum(v[n]*cmath.exp(-2j*math.pi*k*n/6) for n in range(6)) for k in range(6)]; det=round(math.prod(abs(e) for e in eigs)); sign=-1 if sum(1 for e in eigs if e.real<0)%2 else 1; print(f"Q4.CIRCULANT_6x6_DET: ExactDet={sign*det} | Digits={len(str(det))} | MinEigenvalue={min(abs(e) for e in eigs):.2f} (Invertible={det!=0})")

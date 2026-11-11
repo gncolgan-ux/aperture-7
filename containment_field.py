@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math; v=[float(x) for x in nodes]; mass_kg=1e-6; q=1.602e-19; v_particle=(v[4]%1e5)+1e6; r_trap=0.05+(v[2]%10)*0.01; B_field=(mass_kg*v_particle)/(q*r_trap); yield_mt=(mass_kg*2*299792458**2)/(4.184e15); print(f"Penning Trap: B-Field={B_field:.2e}_Tesla | Anti-Particle_Vel={v_particle:.0f}m/s | Annihilation_Yield={yield_mt:.4f}_Megatons")

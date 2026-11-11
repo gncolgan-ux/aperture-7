@@ -1,0 +1,2 @@
+nodes=['202949', '282455', '248143', '198948', '194947', '218370']
+import math; v=[float(x) for x in nodes]; au=1.496e11; earth_mass=5.972e24; radius_au=(v[1]%3)+0.5; thickness=(v[3]%100)+1; radius_m=radius_au*au; vol=4*math.pi*(radius_m**2)*thickness; density=7800; mass_req=vol*density; earths_needed=mass_req/earth_mass; print(f"Dyson Shell: Radius={radius_au:.2f}_AU | Thickness={thickness:.0f}m | Mass_Required={mass_req:.2e}kg | Earths_Dismantled={earths_needed:.0f}")

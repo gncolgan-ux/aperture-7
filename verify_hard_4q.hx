@@ -1,0 +1,5 @@
+Origin(0)
+Shift(3)
+Imprint(import math; v=[int(x) for x in nodes]; rx=sum(v[i]*math.cos(i*math.pi/3) for i in range(6)); ry=sum(v[i]*math.sin(i*math.pi/3) for i in range(6)); print(f"A:[Dipole={sum(math.cos(i*math.pi/3) for i in range(6)):.6f}, Mag={math.hypot(rx,ry):.4f}] | B:[Laplacian={sum(v)-6*224782}] | C:[Var={sum((x-224302)**2 for x in v)//6}, Std={math.sqrt(sum((x-224302)**2 for x in v)/6):.4f}] | D:[GCD={math.gcd(v[4]-v[1], v[5]-v[2])}, Mod={sum(v[i]*(31**i) for i in range(6))%1000003}]"))
+Exec(hard_4q.py)
+Echo(Verified Blind Output -> $REG)

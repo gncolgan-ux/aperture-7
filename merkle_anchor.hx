@@ -1,0 +1,5 @@
+Origin(0)
+Shift(24)
+Imprint(import hashlib; leaves=[hashlib.sha256(str(i).encode()).hexdigest() for i in range(100)]; exec("def build_merkle(l):\n if len(l)==1: return l[0]\n if len(l)%2!=0: l.append(l[-1])\n return build_merkle([hashlib.sha256((l[i]+l[i+1]).encode()).hexdigest() for i in range(0,len(l),2)])"); root=build_merkle(leaves); print(f"Blockchain_Ready: Leaves=100 | Merkle_Root={root[:16]}..."))
+Exec(crypto_hash.py)
+Echo(State Anchored -> $REG)

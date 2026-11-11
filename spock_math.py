@@ -1,0 +1,2 @@
+nodes=['282455', '248143', '198948', '194947', '218370', '202949']
+import math; v=[float(x) for x in nodes]; c=299792458.0; G=6.6743e-11; M_sun=1.989e30; perihelion=(v[3]*1000)+696340000; v_approach=c * 0.992; dilation=1/math.sqrt(1-(v_approach**2/c**2)); defl=2*math.asin(1/(1+(perihelion*v_approach**2)/(G*M_sun))); print(f"Temporal Slingshot: Perihelion={perihelion/1e3:.0f}km | V_max={v_approach/c:.3f}c | Deflection={math.degrees(defl):.6f}deg | Time_Dilation={dilation:.2f}x")

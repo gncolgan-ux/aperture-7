@@ -1,0 +1,5 @@
+Origin(0)
+Shift(2)
+Imprint(import math; v=[float(x) for x in nodes]; G=6.6743e-11; M=6.39e23; v_inf=(v[0]%10000)+5000; r_p=3389000+(v[2]%1000)*1000; e=1+(r_p*(v_inf**2))/(G*M); defl=2*math.asin(1/e); dv=2*v_inf*math.sin(defl/2); print(f"Mars Slingshot: V_inf={v_inf/1000:.2f}km/s | Periapsis={r_p/1000:.0f}km | Deflection={math.degrees(defl):.2f}deg | Delta-V={dv/1000:.2f}km/s"))
+Exec(slingshot.py)
+Echo(Orbital Mechanics Calculated -> $REG)

@@ -1,0 +1,5 @@
+Origin(0)
+Shift(30)
+Imprint(exec("import hashlib\ntarget='00000'\nbase='Aperture_Genesis_Block_'\nnonce=0\nwhile True:\n h=hashlib.sha256((base+str(nonce)).encode()).hexdigest()\n if h.startswith(target): break\n nonce+=1\nprint(f'Collision_Found: Nonce={nonce} | Hash={h}')"))
+Exec(miner.py)
+Echo(Block Mined -> $REG)

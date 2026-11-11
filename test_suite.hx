@@ -1,0 +1,7 @@
+Origin(0)
+Query(Test 1: Baseline dominant node)
+Shift(2)
+Query(Test 2: Peak node after 120-deg shift)
+Shift(5)
+Query(Test 3: Ring spread after 300-deg shift)
+Echo(Final Register -> $REG)

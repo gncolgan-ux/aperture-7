@@ -1,0 +1,2 @@
+nodes=['194947', '218370', '202949', '282455', '248143', '198948']
+exec("prices={'USDC/WETH': 0.0003333, 'WETH/AAVE': 30.0, 'AAVE/MATIC': 200.0, 'MATIC/USDC': 0.512}\nfee=0.9995\ngas_est=0.20\ndef calc_route(amt):\n s1=(amt*prices['USDC/WETH'])*fee\n s2=(s1*prices['WETH/AAVE'])*fee\n s3=(s2*prices['AAVE/MATIC'])*fee\n out=(s3*prices['MATIC/USDC'])*fee\n return out\nstart=2000000\nend=calc_route(start)\nnet=(end-start)-gas_est\nif net>0:\n print(f'NEXUS STRIKE | Net Profit: {net:.2f} USDC')\nelse:\n print(f'ABORT | Net Loss: {net:.2f} USDC')")

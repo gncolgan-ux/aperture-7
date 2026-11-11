@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+v=[int(x) for x in nodes]; N=(max(v)-min(v))//25; p=[1]+[0]*N; exec("for i in range(1,N+1):\n k=1; s=0\n while True:\n  g1=k*(3*k-1)//2; g2=k*(3*k+1)//2\n  if g1>i: break\n  sgn=1 if k%2==1 else -1\n  s+=sgn*p[i-g1]\n  if g2<=i: s+=sgn*p[i-g2]\n  k+=1\n p[i]=s"); print(f"2.RAMANUJAN_PARTITIONS: p({N})_Digits={len(str(p[N]))} | Top15Digits={str(p[N])[:15]}...{str(p[N])[-6:]}")

@@ -1,0 +1,5 @@
+Origin(0)
+Shift(18)
+Imprint(v=[float(x) for x in nodes]; c=299792458.0; spin=(v[0]%99)/100.0 + 0.01; mass_in=10000; eff=0.207*spin; e_out=mass_in * (c**2) * eff; print(f"Penrose Siphon: BH_Spin={spin:.2f}c | Mass_Sacrificed={mass_in}kg | Energy_Harvested={e_out:.2e}J | Net_Gain={(eff*100):.1f}%"))
+Exec(ergosphere_tap.py)
+Echo(Black Hole Harvested -> $REG)

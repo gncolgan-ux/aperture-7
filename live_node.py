@@ -1,0 +1,2 @@
+nodes=['248143', '198948', '194947', '218370', '202949', '282455']
+exec("from web3 import Web3\nw3 = Web3(Web3.HTTPProvider('https://polygon.llamarpc.com'))\nwallet = '0x87f4d266362cFd73ce828FC11c78789a5d19036e'\nif w3.is_connected():\n tx = {'to': wallet, 'from': wallet, 'value': 0, 'chainId': 137}\n gas = w3.eth.estimate_gas(tx)\n print(f'EVM_Validation: SUCCESS | Gas_Required={gas}')\nelse:\n print('EVM_Validation: FAILED | Network Unreachable')")

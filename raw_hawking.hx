@@ -1,0 +1,5 @@
+Origin(0)
+Shift(10)
+Imprint(import math; v=[float(x) for x in nodes]; m=(sum(v)%10000)*1e9+1e9; G=6.6743e-11; c=299792458.0; h=1.054571817e-34; k=1.380649e-23; t=(h*c**3)/(8*math.pi*G*m*k); e=(5120*math.pi*G**2*m**3)/(h*c**4); print(f"{m:.2e},{t:.4f},{e:.4e}"))
+Exec(pure_math.py)
+Echo($REG)

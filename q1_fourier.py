@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math, cmath; v=[float(x) for x in nodes]; F=[sum(v[n]*cmath.exp(-2j*math.pi*k*n/6) for n in range(6)) for k in range(6)]; p_lhs=sum(x**2 for x in v); p_rhs=sum(abs(f)**2 for f in F)/6; print(f"Q1.FOURIER_SPECTRUM: Mode1(Dipole)={abs(F[1]):.1f} | Mode2(Quadrupole)={abs(F[2]):.1f} | Mode3(Hexapole)={abs(F[3]):.1f} | ParsevalMatch={p_lhs/p_rhs*100:.6f}%")

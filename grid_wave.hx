@@ -1,0 +1,8 @@
+Origin(0)
+H3(33.5902, 130.4017, 9)
+Origin(0)
+Imprint(import h3, pyroomacoustics as pra; nodes=['$E0','$E1','$E2','$E3','$E4','$E5']; print('TDOA Nodes Active:', nodes))
+Shift(3)
+Resonate(4.1888)
+Exec(acoustic_grid.py)
+Echo(Acoustic grid python script compiled -> $REG)

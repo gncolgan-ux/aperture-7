@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math; v=[int(x) for x in nodes]; th=[x%6.283185 for x in v]; w=[x/224782.0 for x in v]; print("STEP | SYNC_R   | NODE ANGLES (E0..E5 in radians)"); exec("for s in range(1001):\n r=math.hypot(sum(math.cos(t) for t in th)/6,sum(math.sin(t) for t in th)/6)\n if s in (0,1,2,5,10,50,200,1000): print(f'{s:4d} | {r:.6f} | ' + ' '.join(f'{t:.3f}' for t in th))\n th=[(th[i]+w[i]+0.35*sum(math.sin(th[j]-th[i]) for j in range(6))/6)%6.283185 for i in range(6)]")

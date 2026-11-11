@@ -1,0 +1,5 @@
+Origin(0)
+Shift(33)
+Imprint(exec("w,h=60,30\nfor y in range(h):\n s=''\n for x in range(w):\n  c=complex(2.5*x/w-2.0, 2.5*y/h-1.25)\n  z=0j\n  for i in range(50):\n   if abs(z)>2: break\n   z=z*z+c\n  s+='@' if i==49 else ' '\n print(s)"))
+Exec(fractal_engine.py)
+Echo(Spatial Fractal Mapped -> $REG)

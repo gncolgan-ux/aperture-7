@@ -1,0 +1,5 @@
+Origin(0)
+Shift(29)
+Imprint(exec("import math, random\nn=5; edges=[(i,j,-math.log(random.uniform(0.5, 2.5))) for i in range(n) for j in range(n) if i!=j]\nd=[0.0]*n\nfor _ in range(n-1):\n for u,v,w in edges:\n  if d[u]+w<d[v]: d[v]=d[u]+w\narb=any(d[u]+w<d[v] for u,v,w in edges)\nprint(f'Spatial_Arb_Scan: Pools={n} | Routes={len(edges)} | Infinite_Loop_Detected={arb}')"))
+Exec(arbitrage_hunter.py)
+Echo(Scan Complete -> $REG)

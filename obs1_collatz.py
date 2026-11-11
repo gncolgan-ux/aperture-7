@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+v=[int(x) for x in nodes]; steps=[]; peaks=[]; exec("for x in v:\n s=0; m=x\n while x>1:\n  x=x//2 if x%2==0 else 3*x+1; s+=1; m=max(m,x)\n steps.append(s); peaks.append(m)"); print(f"1.COLLATZ_HAILSTONE: NodeSteps={steps} (Total={sum(steps)}_steps) | HighestSpike={max(peaks)} (from_Node_E{peaks.index(max(peaks))}) | AllReachedOne={all(s>0 for s in steps)}")
