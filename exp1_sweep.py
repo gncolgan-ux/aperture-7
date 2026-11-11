@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math; v=[int(x) for x in nodes]; w=[x/224782.0 for x in v]; print("=== TEST 1: KURAMOTO CRITICAL COUPLING SWEEP ==="); exec("for k in [0.05, 0.15, 0.22, 0.25, 0.28, 0.30, 0.35, 0.50]:\n th=[x%6.283185 for x in v]\n for _ in range(1000): th=[(th[i]+w[i]+k*sum(math.sin(th[j]-th[i]) for j in range(6))/6)%6.283185 for i in range(6)]\n r=math.hypot(sum(math.cos(t) for t in th)/6,sum(math.sin(t) for t in th)/6)\n print(f'Coupling K={k:.2f} -> Final Sync_R={r:.6f} | Spread={max(th)-min(th):.3f}rad')")

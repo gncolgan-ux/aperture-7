@@ -1,0 +1,5 @@
+Origin(0)
+Shift(38)
+Imprint(exec("prices={'USDC/WETH': 0.00032, 'WETH/WBTC': 0.051, 'WBTC/MATIC': 88000, 'MATIC/USDC': 0.75}\nfee=0.9995\ngas_est=0.15\ndef calc_route(amt):\n s1=(amt*prices['USDC/WETH'])*fee\n s2=(s1*prices['WETH/WBTC'])*fee\n s3=(s2*prices['WBTC/MATIC'])*fee\n out=(s3*prices['MATIC/USDC'])*fee\n return out\nstart=1000000\nend=calc_route(start)\nnet=(end-start)-gas_est\nif net>0:\n print(f'OMEGA STRIKE | Net Profit: {net:.2f} USDC')\nelse:\n print(f'ABORT | Net Loss: {net:.2f} USDC')"))
+Exec(arb_route.py)
+Echo(Aperture-7 Decision -> $REG)

@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+v=[float(x) for x in nodes]; p=[1.0,0,0,0,0,0]; exec("for s in range(200):\n p=[0.5*p[i]+0.25*(p[(i-1)%6]*(v[i]/(v[i]+v[(i-2)%6]))+p[(i+1)%6]*(v[i]/(v[i]+v[(i+2)%6]))) for i in range(6)]\n p=[x/sum(p) for x in p]"); exact=v[4]/sum(v); print(f"Q2.MARKOV_EQUILIBRIUM: PeakNode=E4({p[4]:.6f}) vs ExactRatio({exact:.6f}) | MinNode=E1({p[1]:.6f}) | SumP={sum(p):.6f}")

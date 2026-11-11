@@ -1,0 +1,5 @@
+Origin(0)
+Shift(38)
+Imprint(exec("prices={'USDC/WETH': 0.00032, 'WETH/WBTC': 0.051, 'WBTC/USDC': 61500}\ndef calc_route(amt):\n step1 = amt * prices['USDC/WETH']\n step2 = step1 * prices['WETH/WBTC']\n out = step2 * prices['WBTC/USDC']\n return out\nstart=500\nend=calc_route(start)\nprint(f'Arbitrage_Engine | Start: {start} USDC | End: {end:.2f} USDC | Profit: {end-start:.2f} USDC')"))
+Exec(arb_route.py)
+Echo(Arbitrage Route Calculated -> $REG)

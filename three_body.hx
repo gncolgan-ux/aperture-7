@@ -1,0 +1,5 @@
+Origin(0)
+Shift(17)
+Imprint(v=[float(x) for x in nodes]; m1,m2,m3=1e26,1e26,1e26; x1,y1,x2,y2,x3,y3=v[0]*1e8,v[1]*1e8,v[2]*1e8,v[3]*1e8,v[4]*1e8,v[5]*1e8; vx1,vy1,vx2,vy2,vx3,vy3=0,0,0,0,0,0; G=6.674e-11; dt=100; exec("for _ in range(500000):\n dx12,dy12=x2-x1,y2-y1; d12=(dx12**2+dy12**2)**1.5\n dx13,dy13=x3-x1,y3-y1; d13=(dx13**2+dy13**2)**1.5\n dx23,dy23=x3-x2,y3-y2; d23=(dx23**2+dy23**2)**1.5\n vx1+=G*(m2*dx12/d12+m3*dx13/d13)*dt; vy1+=G*(m2*dy12/d12+m3*dy13/d13)*dt\n vx2+=G*(m1*-dx12/d12+m3*dx23/d23)*dt; vy2+=G*(m1*-dy12/d12+m3*dy23/d23)*dt\n vx3+=G*(m1*-dx13/d13+m2*-dx23/d23)*dt; vy3+=G*(m1*-dy13/d13+m2*-dy23/d23)*dt\n x1+=vx1*dt; y1+=vy1*dt; x2+=vx2*dt; y2+=vy2*dt; x3+=vx3*dt; y3+=vy3*dt"); print(f"3-Body Chaos: Iterations=500,000 | Body1_Final_X={x1:.2e} | Body1_Final_Y={y1:.2e}"))
+Exec(orbital_chaos.py)
+Echo(N-Body System Solved -> $REG)

@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math; w=[float(x)/100000.0 for x in nodes]; g0=sum(w); exec("for _ in range(1000):\n w=[w[i]+0.01*((w[(i+1)%6]-w[(i-1)%6])*w[i]+0.1*(w[(i+1)%6]-2*w[i]+w[(i-1)%6])) for i in range(6)]"); g1=sum(w); print(f"3.KELVIN_VORTEX_1000: Initial_Circulation={g0:.10f} vs Final_Circulation={g1:.10f} | Drift={abs(g1-g0):.2e} | PeakVorticity={max(w):.4f}")

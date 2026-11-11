@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+code="++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."; exec("t=[0]*100\np=0\no=''\ni=0\nwhile i<len(code):\n c=code[i]\n if c=='+': t[p]+=1\n elif c=='-': t[p]-=1\n elif c=='>': p+=1\n elif c=='<': p-=1\n elif c=='.': o+=chr(t[p])\n elif c=='[' and t[p]==0:\n  b=1\n  while b>0: i+=1; b+=(code[i]=='[')-(code[i]==']')\n elif c==']' and t[p]!=0:\n  b=1\n  while b>0: i-=1; b+=(code[i]==']')-(code[i]=='[')\n i+=1\nprint(f'VM_Output={o}')")

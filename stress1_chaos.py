@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import math; v=[float(x)/10000.0 for x in nodes]; a=v[:3]; b=[v[0]+1e-12,v[1],v[2]]; exec("for _ in range(5000):\n for s in (a,b):\n  dx=10*(s[1]-s[0]); dy=s[0]*(28-s[2])-s[1]; dz=s[0]*s[1]-2.666667*s[2]\n  s[0]+=0.002*dx; s[1]+=0.002*dy; s[2]+=0.002*dz"); d=math.sqrt(sum((a[i]-b[i])**2 for i in range(3))); print(f"1.RK_LORENZ_CHAOS: State=({a[0]:.3f},{a[1]:.3f},{a[2]:.3f}) | 1e-12_Butterfly_Divergence={d:.6e} (Amplified={d/1e-12:.1f}x) | Finite={all(math.isfinite(x) for x in a)}")

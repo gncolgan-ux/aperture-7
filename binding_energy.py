@@ -1,0 +1,2 @@
+nodes=['218370', '202949', '282455', '248143', '198948', '194947']
+import math; v=[float(x) for x in nodes]; G=6.6743e-11; earth_m=5.972e24; earth_r=6371000; p_mass=earth_m * ((v[0]%10)+1); p_radius=earth_r * ((v[1]%5)+0.5); bind_e=(3*G*p_mass**2)/(5*p_radius); sun_power=3.828e26; time_sun=bind_e/sun_power; print(f"Planet Cracker: Target_Mass={p_mass/earth_m:.1f}xEarth | Energy_Required={bind_e:.2e}J | Solar_Output_Eq={time_sun/(3600*24):.0f}_Days")

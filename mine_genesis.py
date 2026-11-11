@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import hashlib, time; v=[str(x) for x in nodes]; seed="".join(v); target="00000"; t0=time.time(); nonce=0; exec("while True:\n h=hashlib.sha256((seed+str(nonce)).encode()).hexdigest()\n if h.startswith(target): break\n nonce+=1"); dt=time.time()-t0; print(f"Genesis_Mined: Nonce={nonce} | Hash={h[:16]}... | Time={dt:.2f}s | Hashrate={nonce/dt:.0f}_H/s")

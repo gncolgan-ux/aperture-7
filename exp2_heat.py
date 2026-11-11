@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+v=[float(x) for x in nodes]; c=224782.0; print("\n=== TEST 2: 7-NODE THERMAL DIFFUSION RELAXATION ==="); exec("for s in range(101):\n if s in (0,2,5,10,25,50,100): print(f'Step {s:3d} | RingSpread={max(v)-min(v):9.2f} | Hub_C0={c:9.2f} | TotalSum={sum(v)+c:.1f}')\n nv=[v[i]+0.15*((v[(i-1)%6]+v[(i+1)%6]+c)-3*v[i]) for i in range(6)]\n c=c+0.15*(sum(v)-6*c); v=nv")

@@ -1,0 +1,5 @@
+Origin(0)
+Shift(3)
+Imprint(import math; v=[int(x) for x in nodes]; c=300000.0; gammas=[1.0/math.sqrt(1.0-(x/c)**2) for x in v]; th=[x%6.283185 for x in v];exec("for _ in range(1000):\n th=[(th[i]+(v[i]/224782.0)+0.35*sum(math.sin(th[j]-th[i]) for j in range(6))/6.0)%6.283185 for i in range(6)]"); sync=math.hypot(sum(math.cos(t) for t in th)/6.0, sum(math.sin(t) for t in th)/6.0); tot=float(sum(v)); ent=-sum((x/tot)*math.log2(x/tot) for x in v); print(f"1.RELATIVITY:[MaxGamma(E4)={max(gammas):.4f}x, MeanGamma={sum(gammas)/6:.4f}x, RelKE={sum((g-1)*x for g,x in zip(gammas,v)):.1f}] | 2.HORIZON:[Curvature={tot/(c**2):.6f}, Redshift={1.0/math.sqrt(1.0-min(0.99,tot/(c**2*20))):.6f}] | 3.CHAOS_1000_STEPS:[SyncOrder_R={sync:.6f}, Phase0={th[0]:.4f}rad] | 4.THERMO:[Entropy={ent:.6f}_bits, MaxPossible=2.584963_bits]"))
+Exec(extreme_sim.py)
+Echo(Extreme Physics Readout -> $REG)

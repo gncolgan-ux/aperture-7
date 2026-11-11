@@ -1,0 +1,15 @@
+{
+  "chain": [
+    {
+      "index": 1,
+      "timestamp": 1793984864.7543087,
+      "data": "TRADE_001_CONTRACT_SIGNED_APERTURE_7_ACTIVE",
+      "spatial_proof": "47eaeede5eb21d9b70b9cb29eb0080fa99c64e7463a7bfe26e05242fcd718f75",
+      "miner": "0xgncolgan_aperture_master",
+      "reward": 1000
+    }
+  ],
+  "wallet_balances": {
+    "0xgncolgan_aperture_master": 1000
+  }
+}

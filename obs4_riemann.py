@@ -1,0 +1,2 @@
+nodes=['198948', '194947', '218370', '202949', '282455', '248143']
+import cmath, math; v=[float(x) for x in nodes]; t1=14.134725141734693; t_node=v[4]/19980.0; z_exact=abs(sum(((-1)**(n-1))/(n**(0.5+1j*t1)) for n in range(1,10000)) / (1.0 - 2.0**(0.5-1j*t1))); z_node=abs(sum(((-1)**(n-1))/(n**(0.5+1j*t_node)) for n in range(1,2000)) / (1.0 - 2.0**(0.5-1j*t_node))); print(f"4.RIEMANN_CRITICAL_LINE: FirstZero_Mag(t=14.1347)={z_exact:.6e} | NodeProbe_Mag(t={t_node:.4f})={z_node:.6f}")

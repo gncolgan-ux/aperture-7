@@ -1,0 +1,5 @@
+Origin(0)
+Shift(22)
+Imprint(import random; w,h=20,20; grid=[[random.randint(0,1) for _ in range(w)] for _ in range(h)]; exec("for _ in range(1000):\n new_grid=[[0]*w for _ in range(h)]\n for y in range(h):\n  for x in range(w):\n   n=sum(grid[(y+dy)%h][(x+dx)%w] for dx in [-1,0,1] for dy in [-1,0,1] if (dx!=0 or dy!=0))\n   if grid[y][x]==1 and n in [2,3]: new_grid[y][x]=1\n   elif grid[y][x]==0 and n==3: new_grid[y][x]=1\n grid=new_grid"); alive=sum(sum(r) for r in grid); print(f"Conway_Automaton: Gens=1000 | Final_Alive_Cells={alive} | Grid_Size={w}x{h}"))
+Exec(cellular_automaton.py)
+Echo(Evolution Mapped -> $REG)

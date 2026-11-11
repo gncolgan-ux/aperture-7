@@ -1,0 +1,5 @@
+Origin(0)
+Shift(2)
+Imprint(import math; v=[float(x) for x in nodes]; heat_flux=sum((math.sin(x)*math.log(x)) for x in v); fracture_mach=abs(heat_flux) * math.pi + 15.0; print(f"PTFE_Casing_Integrity: Max Heat Flux={heat_flux:.4f} | Structural Failure at Mach {fracture_mach:.2f}"))
+Exec(drone_reentry.py)
+Echo(Aerodynamic Stress Test Locked -> $REG)

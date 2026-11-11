@@ -1,0 +1,5 @@
+Origin(0)
+Shift(15)
+Imprint(import time; target=39999994400001711; t0=time.time(); exec("f=0\nfor i in range(3, int(target**0.5)+1, 2):\n if target%i==0:\n  f=i\n  break"); print(f"RSA_Target={target} | Prime_Factor={f} | Time={time.time()-t0:.2f}s | Divisions_Run={(f//2):,}"))
+Exec(prime_hunter.py)
+Echo(Encryption Cracked -> $REG)

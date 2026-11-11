@@ -1,0 +1,5 @@
+Origin(0)
+Shift(11)
+Imprint(import math; v=[float(x) for x in nodes]; c=299792458.0; G=6.6743e-11; j_mass=1.898e27; warp_factor=(sum(v)%90)+10; radius=(v[2]%100)+50; vel=warp_factor*c; neg_energy=-(vel**2 * radius**2 * c**4) / G; neg_mass=neg_energy/(c**2); jupiters=neg_mass/j_mass; print(f"Alcubierre Metric: Speed={warp_factor:.1f}c | Bubble_Radius={radius:.0f}m | Exotic_Mass_Req={jupiters:.4e}_Negative_Jupiters"))
+Exec(spacetime_metric.py)
+Echo(Warp Field Generated -> $REG)
